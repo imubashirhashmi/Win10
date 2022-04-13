@@ -1,0 +1,278 @@
+:root {
+    --deskContextBG: rgb(238, 238, 238);
+    --taskbarBG: rgb(37, 50, 57);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin:0;
+    user-select: none;
+    font :12px/18px 'Segoe UI regular';
+    /* font-size: 12px; */
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* *************** */
+/* Desktop Starts */
+/* ************* */
+
+.container .desktop {
+    width: 100vw;
+    height: 100vh;
+    background: url('img/kahurangi.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Context-Menu on Desktop */
+
+.container .desktop .desktopContextMenu {
+    display: none;
+    position: absolute;
+    width: 250px;
+    background-color: var(--deskContextBG);
+    box-shadow: inset 0px 0px 0px 0.5px rgb(145, 145, 145), 6px 6px 4px -6px black;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.container .desktop .desktopContextMenu ul{
+       padding: 5px 2px;
+       pointer-events: none;
+}
+
+.container .desktop .desktopContextMenu ul li{
+    list-style: none;
+    padding: 3px 0px;   
+    color:black;
+    pointer-events: auto;
+}
+
+.container .desktop .desktopContextMenu ul li img{
+    width: 06px;
+    position: absolute;
+    right: 0px;
+}
+
+.container .desktop .desktopContextMenu ul li:hover{
+    background-color: #fff; 
+}
+
+.container .desktop .desktopContextMenu ul li div:first-child{
+    display: inline-block;
+    width:15px;
+    margin: 0 8px;
+    background-color: red;
+    pointer-events: none;
+}
+
+.container .desktop .desktopContextMenu ul .separatorLine {
+    padding: 3px 0px;
+}
+
+.container .desktop .desktopContextMenu ul .separatorLine:hover {
+    background-color: var(--deskContextBG);
+}
+
+
+.container .desktop .desktopContextMenu ul .separatorLine div:first-child {
+    display: block;
+    width: 232px;
+    height: 1px;
+    margin: 0 8px;
+    background-color: rgb(145, 145, 145);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.container .desktop .desktopContextMenu ul .pasteShortCut,.container .desktop .desktopContextMenu ul .paste {
+    color: rgb(131, 131, 131);
+}
+
+/* Sub menus on desktop context menu */
+
+.container .desktop .desktopContextMenu ul li .sub-menu {
+    position: absolute;
+    display: none;
+    /* visibility: hidden; */
+    left: 245px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container .desktop .desktopContextMenu ul li .sub-menu.alignleft {
+    left:-245px;
+}
+
+.container .desktop .desktopContextMenu ul li .sub-menu.aligntop {
+    bottom:33px;
+}
+
+.container .desktop .desktopContextMenu ul li .sub-menu ul {
+    pointer-events: none;
+}
+
+.container .desktop .desktopContextMenu ul li .view {
+    top:0;
+}
+
+.container .desktop .desktopContextMenu ul li:hover .sub-menu {
+    display: block!important;
+    visibility: hidden;
+    animation: delay-in 1000ms 500ms 1 forwards;
+}
+
+/* .container .desktop .contextMenu ul li:not(:hover) .view {
+    animation-play-state: paused;
+    display: block;
+    visibility: visible;
+    animation: delay-out 100ms 500ms 1 forwards;
+} */
+
+
+.container .desktop .desktopContextMenu ul li .sortby {
+    top:auto;
+    transform: translateY(-22.5%);
+}
+
+.container .desktop .desktopContextMenu ul li .new {
+    top:auto;
+    transform: translateY(-13%);
+}
+
+
+.container .desktop .active {
+    display: block!important; 
+}
+
+/* .container .desktop .contextMenu.sub-menu {
+    
+    animation: delay-in 10s 500ms;
+    
+} */
+
+@keyframes delay-in {
+    from {visibility: hidden;}
+    to {visibility: visible;}
+    
+}
+
+@keyframes delay-out {
+    from {visibility: visible;}
+    to {visibility: hidden;}
+}
+
+
+
+/* Folder and Files */
+.container .desktop .iconArea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.container .desktop .placeholder {
+    position: absolute;
+    margin:6px 20px 20px 2px;
+    width: 70px;
+    height: max-content;
+    background-color: transparent;
+    word-wrap: break-word;
+}
+
+.container .desktop .placeholder .icon {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    
+}
+
+.container .desktop .placeholder .desktop-item {
+    position: relative;  
+    text-align: center;  
+}
+
+.container .desktop .placeholder .rename {
+    position: absolute;
+    max-width: 100%;
+    width: max-content;
+    padding: 2px 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+    background-color: white;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 1px 1.2px rgba(163, 163, 163, 0.5);
+}
+
+.container .desktop .placeholder:hover {
+    
+    background-color: rgba(238, 237, 237, 0.05);
+    box-shadow: 0px 0px 1px 1.2px rgba(255,255,255,0.5);
+}
+
+.container .desktop .placeholder.active {
+    background-color: rgba(238, 237, 237, 0.25);
+    box-shadow: 0px 0px 1px 1.2px rgba(255,255,255,0.5);
+}
+
+.container .desktop .placeholder.active:hover {
+    background-color: rgba(238, 237, 237, 0.15);
+    box-shadow: 0px 0px 1px 1.2px rgba(255,255,255,0.5);
+}
+
+.selectStream {
+    position: absolute;
+    z-index: 9;
+    background-color: rgba(0, 0, 255, 0.1);
+    box-shadow: 0px 0px 0px 0.2px rgb(9, 9, 197);
+}
+
+/* ************* */
+/* Desktop Ends */
+/* *********** */
+
+
+
+
+/* *************** */
+/* Taskbar Starts */
+/* ************* */
+
+img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.container .taskbar {
+    position:absolute;
+    width: 100%;
+    height: 31px;
+    bottom: 0;
+    background-color: var(--taskbarBG);
+    opacity: 0.9;
+}
+
+/* ************* */
+/* Taskbar Ends */
+/* *********** */

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="img/fevicon.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Windows 10</title>
+</head>
+<body oncontextmenu="return false">
+    <div class="container">
+        <div class="desktop">
+            <div class="desktopContextMenu">
+                <ul>
+                    <li id="view"><div></div>View
+                        <div class="sub-menu view desktopContextMenu">
+                            <ul><li><div></div>Large icons</li>
+                                <li><div></div>Medium icons</li>
+                                <li><div></div>Small icons</li>
+                                <li class="separatorLine"><div></div></li>
+                                <li><div></div>Auto arrange icons</li>
+                                <li><div></div>Align icons to grid</li>
+                                <li class="separatorLine"><div></div></li>
+                                <li><div></div>Show desktop icons</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li id="sortby"><div></div>Sort By
+                        <div class="sub-menu sortby desktopContextMenu">
+                            <ul><li><div></div>Name</li>
+                                <li><div></div>Size</li>
+                                <li><div></div>Item type</li>
+                                <li><div></div>Date modified</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><div></div>Refresh</li>
+                    <li class="separatorLine"><div></div></li>
+                    <li class="paste"><div></div>Paste</li>
+                    <li class="pasteShortCut"><div></div>Paste Shortcut</li>
+                    <li class="separatorLine"><div></div></li>
+                    <li id="new"><div></div>New
+                        <div class="sub-menu new desktopContextMenu">
+                            <ul><li><div></div>Folder</li>
+                                <li><div></div>Shortcut</li>
+                                <li class="separatorLine"><div></div></li>
+                                <li><div></div>Bitmap image</li>
+                                <li><div></div>Contact</li>
+                                <li><div></div>Rich Text Format</li>
+                                <li><div></div>Text Document</li>
+                                <li><div></div>Compressed (zipped) Folder</li>
+                            </ul>
+                        </div></li>
+                    <li class="separatorLine"><div></div></li>
+                    <li><div></div>Display Settings</li>
+                    <li><div></div>Personalize</li>
+                </ul>
+            </div>
+            
+            <div class="placeholder">
+                <img class="icon" src="img/folder.png">
+                <div class="desktop-item">zahid</div>
+            </div>
+            
+        </div>
+        <img src="img/taskbaru.png">
+        <div class="taskbar"></div>
+    </div>
+
+    <script src="./js/desktop.js"></script>
+    <script src="./js/contextMenu.js"></script>
+    <script src="./js/desktopItems.js"></script>
+    <script src="./js/windows10.js"></script>
+</body>
+</html>
